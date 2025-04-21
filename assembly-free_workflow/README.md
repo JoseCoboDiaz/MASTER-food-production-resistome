@@ -6,7 +6,7 @@ the ResFinder database
 using bowtie2 [21] with *--very-sensitive* *--end-to-end* parameters by
 
 ```         
-ruby 01.bowtier2_resfinder folder_filtered_reads
+ruby 01.bowtie2_resfinder folder_filtered_reads
 ```
 
 The folder_filtered_reads must contain a folder per sample (originated
