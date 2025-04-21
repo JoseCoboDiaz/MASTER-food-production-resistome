@@ -2,8 +2,8 @@
 
 For resistome and virulome analysis, filtered reads were aligned versus
 the ResFinder database
-(<https://bitbucket.org/genomicepidemiology/resfinder_db/src/master/all.fsa>),,
-using bowtie2 [21] with *--very-sensitive* *--end-to-end* parameters by
+(<https://bitbucket.org/genomicepidemiology/resfinder_db/src/master/all.fsa>),
+using bowtie2 (<https://rnnh.github.io/bioinfo-notebook/docs/bowtie2.html>) with *--very-sensitive* *--end-to-end* parameters by
 
 ```         
 ruby 01.bowtie2_resfinder folder_filtered_reads
@@ -16,7 +16,7 @@ with 3 fastq.bz2 files inside (R1,R2,unpaired).
 
 The obtained sam files were filtered by an in-house ruby script
 read_counts_v4.rb, which removes the gene over-estimation occurring when
-forward and reverse reads are aligned with the same gene.
+forward and reverse reads are aligned with the same gene:
 
 ```         
 ruby read_counts_v4.rb sam_files_folder
@@ -39,10 +39,10 @@ contains 4 columns:
 -   Hit: hit or gene name according to ResFinder database
 
 To obtain the *Family*, *Gene* and *Hit* columns information, we
-recommend to download the phe*notypes.txt* and *all.fsa* files from
+recommend to download the *phenotypes.txt* and *all.fsa* files from
 ResFinder
 (<https://bitbucket.org/genomicepidemiology/resfinder_db/src/master/>),
-to run CD-HIT and following scripts:
+to run CD-HIT and following script:
 
 ```         
 cdhit -i all.fsa -o cdhit.txt -c 0.9
@@ -51,6 +51,8 @@ ruby extract_cluster_table.rb
 
 You must curate (and add) the genefam column manually according to
 cluster and gene columns resulted.
+
+
 
 The obtained counts matrix was processed by R-scripts to calculate the
 counts per million reads (CPM) adding a bacterial marker modification
