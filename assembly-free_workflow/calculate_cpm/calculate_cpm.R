@@ -17,7 +17,7 @@ data<-data[,-c(1:4)]
 reads$Sample[1747:nrow(reads)]=gsub("_1","",reads$Sample[1747:nrow(reads)])
 
 table(colnames(data)==gsub("_R1","",reads$Sample))
-colnames(data)[559]
+colnames(data)[559] # to check the unique FALSE on our dataset, due to naming problem, so not applicable to other datasets
 reads$Sample[559]
 
 #colnames(data)=gsub(".1","",colnames(data))
