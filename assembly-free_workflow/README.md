@@ -1,6 +1,6 @@
 # Assembly-free workflow
 
-For resistome and virulome analysis, filtered reads were aligned versus
+For resistome analysis, filtered reads were aligned versus
 the ResFinder database
 (<https://bitbucket.org/genomicepidemiology/resfinder_db/src/master/all.fsa>),
 using bowtie2 (<https://rnnh.github.io/bioinfo-notebook/docs/bowtie2.html>) with *--very-sensitive* *--end-to-end* parameters by
